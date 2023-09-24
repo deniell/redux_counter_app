@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux_counter_app/pages/counter_page.dart';
+import 'package:redux_counter_app/stores/store.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(StoreProvider(
+    store: store,
+    child: const MaterialApp(
       title: 'Redux Counter App',
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: CounterPage(),
       debugShowCheckedModeBanner: false,
-    )
-  );
+    ),
+  ));
 }
 

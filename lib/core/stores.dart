@@ -6,6 +6,6 @@ final Store<AppState> store = Store(
   reducer,
   initialState: const AppState(
     counter: 0,
-    text: "Your text"
+    text: "Your text will be set here"
   ),
 );

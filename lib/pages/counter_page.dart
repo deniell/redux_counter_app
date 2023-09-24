@@ -10,43 +10,14 @@ class CounterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Store<AppState> store = StoreProvider.of<AppState>(context);
-    String inputText = "";
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Counter page'),
+        title: const Text('Counter'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
-              width: 300,
-              child: TextField(
-                onChanged: (value) => inputText = value,
-              ),
-            ),
-            const SizedBox(height: 30),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-                padding: const EdgeInsets.all(15),
-              ),
-              onPressed: () => store.dispatch(SetTextAction(text: inputText)),
-              child: const Text(
-                "SET",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            StoreConnector<AppState, AppState>(
-              converter: (store) => store.state,
-              builder: (context, vm) => Text(vm.text),
-            ),
-            const SizedBox(height: 100),
             StoreConnector<AppState, AppState>(
               converter: (store) => store.state,
               builder: (context, state) => Text(

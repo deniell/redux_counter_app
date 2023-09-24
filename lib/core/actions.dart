@@ -1,4 +1,5 @@
 class AddAction {}
+
 class SetTextAction {
   final String text;
 

@@ -28,11 +28,25 @@ class CounterPage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => store.dispatch(AddAction()),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            heroTag: "+",
+            onPressed: () => store.dispatch(AddAction()),
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(width: 10),
+          FloatingActionButton(
+            heroTag: "-",
+            onPressed: () => store.dispatch(RemoveAction()),
+            tooltip: 'Decrement',
+            backgroundColor: Colors.redAccent,
+            child: const Icon(Icons.remove),
+          ),
+        ],
+      ) // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

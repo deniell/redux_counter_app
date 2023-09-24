@@ -31,20 +31,41 @@ class SetTextPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
-            TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: const EdgeInsets.all(15),
-              ),
-              onPressed: () => store.dispatch(SetTextAction(text: inputText)),
-              child: const Text(
-                "SET",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.all(15),
+                  ),
+                  onPressed: () => store.dispatch(SetTextAction(text: inputText)),
+                  child: const Text(
+                    "SET",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.all(15),
+                  ),
+                  onPressed: () => store.dispatch(ResetTextAction()),
+                  child: const Text(
+                    "RESET",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
             const SizedBox(height: 30),
             StoreConnector<AppState, AppState>(

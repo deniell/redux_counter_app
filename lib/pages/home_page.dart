@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redux_counter_app/pages/counter_page.dart';
+import 'package:redux_counter_app/pages/get_image_page.dart';
 import 'package:redux_counter_app/pages/set_text_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -43,6 +44,24 @@ class HomePage extends StatelessWidget {
               ),
               child: const Text(
                 "Set Text page",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.green,
+                padding: const EdgeInsets.all(20),
+              ),
+              onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: ((context) => const GetImagePage()))
+              ),
+              child: const Text(
+                "Get Image page",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22,

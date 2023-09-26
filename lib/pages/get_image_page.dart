@@ -18,8 +18,8 @@ class GetImagePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 150,
-              width: 150,
+              height: 300,
+              width: 300,
               margin: const EdgeInsets.all(16),
               child: StoreConnector<AppState, AppState> (
                 converter: (store) => store.state,

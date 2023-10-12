@@ -13,9 +13,12 @@ AppState betterReducer(AppState state, dynamic action) => AppState(
 int _addCounterReducer(int count, AddAction action) => count + 1;
 int _removeCounterReducer(int count, RemoveAction action) => count - 1;
 
+int _calcReducer(int count, CalculateAction action) => action.count;
+
 Reducer<int> _betterCounterReducer = combineReducers([
   TypedReducer<int, AddAction>(_addCounterReducer),
   TypedReducer<int, RemoveAction>(_removeCounterReducer),
+  TypedReducer<int, CalculateAction>(_calcReducer),
 ]);
 
 String _setTextReducer(String text, SetTextAction action) => action.text;

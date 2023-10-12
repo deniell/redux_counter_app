@@ -9,7 +9,7 @@ void loaderMiddleware(
   NextDispatcher nextDispatcher
 ) {
   if (action is GetImageAction) {
-    const String url = "https://picsum.photos/id/237/500/400";
+    const String url = "https://picsum.photos/500/400";
     _loadImage(url).then((image) => store.dispatch(LoadedImageAction(image: image)));
   }
 

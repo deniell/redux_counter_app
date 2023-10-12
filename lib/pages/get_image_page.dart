@@ -26,21 +26,42 @@ class GetImagePage extends StatelessWidget {
                 builder: (context, vm) => vm.widget,
               )
             ),
-            ElevatedButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: const EdgeInsets.all(15),
-              ),
-              onPressed: () => store.dispatch(GetImageAction()),
-              child: const Text(
-                "Get Image",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.all(15),
+                  ),
+                  onPressed: () => store.dispatch(GetImageAction()),
+                  child: const Text(
+                    "Get Image 1",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
-              ),
-            ),
+                const SizedBox(width: 30),
+                ElevatedButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.all(15),
+                  ),
+                  onPressed: () => store.dispatch(loadImageThunkAction(store)),
+                  child: const Text(
+                    "Get Image 2",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
